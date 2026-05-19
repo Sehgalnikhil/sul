@@ -21,40 +21,89 @@ st.set_page_config(
 st.markdown("""
 <style>
 /* ---- Global ---- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+html, body, [class*="css"] { 
+    font-family: 'Inter', sans-serif; 
+}
+
+/* App Background */
+.stApp {
+    background-color: #0F0720;
+    color: #eaddff;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: #eaddff !important;
+}
 
 /* Sidebar */
 section[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
+    background: #170f28;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 section[data-testid="stSidebar"] .stMarkdown h3 {
-    color: #a78bfa;
-    border-bottom: 1px solid #4c3f8f;
+    color: #bb86fc; /* Electric Violet */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-/* Metric cards */
+/* Metric cards & Expander */
+div[data-testid="stMetric"], div[data-testid="stExpander"] {
+    background: rgba(26, 11, 59, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+}
+
 div[data-testid="stMetric"] {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 12px 16px;
+    padding: 16px 24px;
+}
+
+div[data-testid="stMetricValue"] {
+    color: #46f5e0 !important; /* Cyan */
 }
 
 /* Expander header */
-details summary { font-weight: 600; }
+details summary { 
+    font-weight: 600; 
+    color: #dab9ff; 
+}
 
 /* Hero banner */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: rgba(26, 11, 59, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 2rem 2.5rem;
     margin-bottom: 1.5rem;
-    color: white;
+    color: #eaddff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
-.hero h1 { margin: 0 0 0.5rem 0; font-size: 1.75rem; }
-.hero p  { margin: 0; opacity: 0.9; font-size: 1rem; }
+.hero h1 { 
+    margin: 0 0 0.5rem 0; 
+    font-size: 1.75rem; 
+    color: #bb86fc !important; 
+}
+.hero p  { 
+    margin: 0; 
+    opacity: 0.9; 
+    font-size: 1rem; 
+    color: #cdc3d4;
+}
+
+/* Customizing inputs for the 'Control Center' feel */
+.stNumberInput input {
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
